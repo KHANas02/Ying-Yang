@@ -1,0 +1,115 @@
+html {
+  background: #555;
+}
+
+div#yy-container {
+  position: relative;
+  height: 400px;
+  width: 400px;
+  margin: 75px auto 0 auto;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-image: radial-gradient(circle at center center, black 99%, transparent 100%);
+  background-size: 100% 50%;
+  background-position: 0px 0px;
+  border-radius: 100%;
+  animation: yyContainer 8s infinite forwards linear;
+}
+div#yy-container::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 400px;
+  height: 400px;
+  top: 0px;
+  background-repeat: no-repeat;
+  background-image: radial-gradient(circle at center center, white 99%, transparent 100%);
+  background-size: 100% 50%;
+  background-position: 0px 0px;
+  border-radius: 100%;
+  transform: rotate(180deg);
+  transform-origin: center;
+  z-index: 0;
+}
+@keyframes yyContainer {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+div#yy-container div.ying-yang {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-image: radial-gradient(circle at center center, black 99%, transparent 100%);
+  background-size: 50%;
+  background-position: 0px 0px;
+  border-radius: 100px 0 0 100px;
+  transform: rotate(90deg);
+  animation: yingYang 4s infinite forwards linear;
+  z-index: 1;
+  top: 100px;
+}
+div#yy-container div.ying-yang:first-of-type {
+  left: 0px;
+}
+div#yy-container div.ying-yang:nth-of-type(2) {
+  left: 200px;
+}
+div#yy-container div.ying-yang::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100px;
+  height: 200px;
+  left: 100px;
+  background-repeat: no-repeat;
+  background-image: radial-gradient(circle at center center, white 99%, transparent 100%);
+  background-size: 100%;
+  background-position: 0px 0px;
+  border-radius: 0 100px 100px 0;
+  transform: rotate(0deg);
+  transform-origin: center left;
+  z-index: 2;
+}
+div#yy-container div.ying-yang::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100px;
+  height: 100px;
+  left: 150px;
+  background-repeat: no-repeat;
+  background-image: radial-gradient(circle at 0% 0%, black 99%, transparent 100%);
+  background-size: 100px 100px;
+  background-position: 0px 0px;
+  border-radius: 100% 100% 100% 100%;
+  box-shadow: 0px -100px 0px white;
+  transform: rotate(180deg);
+  transform-origin: center left;
+  z-index: 3;
+}
+div#yy-container div.ying-yang span {
+  position: absolute;
+  display: block;
+  width: 50px;
+  height: 50px;
+  background-color: white;
+  left: calc(50% - 25px);
+  top: 25px;
+  border-radius: 100%;
+  box-shadow: 0px 100px 0px black;
+  z-index: 4;
+}
+@keyframes yingYang {
+  0% {
+    transform: rotate(90deg);
+  }
+  100% {
+    transform: rotate(450deg);
+  }
+}
